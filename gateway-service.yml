@@ -28,3 +28,7 @@ spring:
           uri: lb:/movement-service
           predicates:
             - Path=/movement/**
+        - id: benefit-service
+          uri: lb:/benefit-service
+          predicates:
+            - Path=/benefit/**
