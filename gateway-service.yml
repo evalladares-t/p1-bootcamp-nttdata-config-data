@@ -6,7 +6,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://192.168.18.33:8761/eureka/
   instance:
     hostname: localhost
 spring:
@@ -17,18 +17,18 @@ spring:
           enabled: true
       routes:
         - id: customer-service
-          uri: lb://customer-service
+          uri: http://192.168.18.33:9000
           predicates:
             - Path=/customer/**
         - id: product-service
-          uri: lb:/product-service
+          uri: http://192.168.18.33:9003
           predicates:
             - Path=/product/**
         - id: movement-service
-          uri: lb:/movement-service
+          uri: http://192.168.18.33:9005
           predicates:
             - Path=/movement/**
         - id: benefit-service
-          uri: lb:/benefit-service
+          uri: http://192.168.18.33:9007
           predicates:
             - Path=/benefit/**
